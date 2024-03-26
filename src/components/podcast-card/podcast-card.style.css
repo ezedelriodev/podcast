@@ -1,0 +1,47 @@
+.card__container {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 200px; /* Ancho del rectángulo */
+  height: 200px; /* Alto del rectángulo + altura del círculo */
+}
+
+.card__rectangle {
+  display: flex;
+  width: 200px;
+  height: 120px;
+  border-radius: 4px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card__circle {
+  position: absolute;
+  top: -40px; /* Posición relativa al rectángulo */
+  left: 50%; /* Centrado horizontal */
+  transform: translateX(-50%); /* Centrado horizontal */
+  width: 100px; /* Diámetro del círculo */
+  height: 100px; /* Diámetro del círculo */
+  border-radius: 50%; /* Hacerlo circular */
+  overflow: hidden; /* Ocultar la parte de la imagen que se salga del círculo */
+}
+
+.card__image {
+  width: 100%; /* Para que la imagen ocupe todo el círculo */
+  height: 100%; /* Para que la imagen ocupe todo el círculo */
+  object-fit: cover; /* Escalar la imagen para que cubra el círculo */
+  border-radius: 50%; /* Hacerlo circular */
+}
+
+.card__title {
+  font-weight: 500;
+}
+
+.card__author {
+  font-size: 14px;
+  color: grey;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
