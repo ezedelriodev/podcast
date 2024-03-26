@@ -43,16 +43,9 @@ export interface Category {
 
 export interface CategoryAttributes {
   "im:id": string;
-  term: PurpleLabel;
+  term: string;
   scheme: string;
-  label: PurpleLabel;
-}
-
-export enum PurpleLabel {
-  Music = "Music",
-  MusicCommentary = "Music Commentary",
-  MusicHistory = "Music History",
-  MusicInterviews = "Music Interviews",
+  label: string;
 }
 
 export interface ID {
@@ -78,12 +71,8 @@ export interface IMContentType {
 }
 
 export interface IMContentTypeAttributes {
-  term: FluffyLabel;
-  label: FluffyLabel;
-}
-
-export enum FluffyLabel {
-  Podcast = "Podcast",
+  term: string;
+  label: string;
 }
 
 export interface IMImage {
@@ -96,25 +85,17 @@ export interface IMImageAttributes {
 }
 
 export interface IMPrice {
-  label: IMPriceLabel;
+  label: string;
   attributes: IMPriceAttributes;
 }
 
 export interface IMPriceAttributes {
   amount: string;
-  currency: Currency;
-}
-
-export enum Currency {
-  Usd = "USD",
-}
-
-export enum IMPriceLabel {
-  Get = "Get",
+  currency: string;
 }
 
 export interface IMReleaseDate {
-  label: Date;
+  label: string;
   attributes: Icon;
 }
 
@@ -123,16 +104,7 @@ export interface Link {
 }
 
 export interface LinkAttributes {
-  rel: Rel;
-  type?: Type;
+  rel: string;
+  type?: string;
   href: string;
-}
-
-export enum Rel {
-  Alternate = "alternate",
-  Self = "self",
-}
-
-export enum Type {
-  TextHTML = "text/html",
 }
