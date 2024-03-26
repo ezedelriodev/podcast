@@ -10,3 +10,7 @@
   z-index: 1000; /* Asegura que la cabecera esté por encima del resto del contenido */
   border-bottom: 1px solid #ddd; /* Agrega una línea en la parte inferior */
 }
+
+.header__link {
+  margin-left: calc((100% - 1200px) / 2);
+}
