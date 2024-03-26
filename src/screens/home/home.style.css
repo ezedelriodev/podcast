@@ -4,5 +4,6 @@
   gap: 20px;
   max-width: 1200px; /* Cambia este valor según lo que desees */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 0 20px; /* Opcional: agrega espacio alrededor del contenido */
+  padding: 0 20px;
+  margin-top: 200px; /* Opcional: agrega espacio alrededor del contenido */
 }
