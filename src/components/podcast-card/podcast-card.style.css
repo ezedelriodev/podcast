@@ -50,7 +50,11 @@
   font-size: 14px;
   color: grey;
   margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-weight: 500;
+  overflow: hidden;
   margin: 0 10px;
   text-align: center;
 }

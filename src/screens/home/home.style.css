@@ -1,9 +1,15 @@
 .home__container {
   display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home__podcastList {
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  max-width: 1200px; /* Cambia este valor según lo que desees */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 1200px;
   padding: 0 20px;
-  margin-top: 200px; /* Opcional: agrega espacio alrededor del contenido */
+  margin-top: 70px;
 }
