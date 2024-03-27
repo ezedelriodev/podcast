@@ -8,7 +8,6 @@ const Home = () => {
   const podcastList: Entry[] = mock.feed.entry;
   return (
     <>
-      <Header />
       <div className="home__container" data-testid="home_container">
         {podcastList.map((item) => (
           <PodcastCard podcastItem={item} key={item.id.label} />
