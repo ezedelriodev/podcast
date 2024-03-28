@@ -6,8 +6,8 @@
   height: 70px;
   background-color: white;
   padding: 10px 20px;
-  z-index: 1000; /* Asegura que la cabecera esté por encima del resto del contenido */
-  border-bottom: 1px solid #ddd; /* Agrega una línea en la parte inferior */
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
 }
 
 .header__link {

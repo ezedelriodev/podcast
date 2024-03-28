@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Entry } from "../../types/types";
 import "./podcast-card.style.css";
 
@@ -8,9 +8,14 @@ type Props = {
 
 const PodcastCard: FC<Props> = (props) => {
   const { podcastItem } = props;
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <div className="card__container">
+    <div
+      className={`card__container ${isHovered ? "hovered" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="card__rectangle">
         <div className="card__title">{podcastItem["im:name"].label}</div>
         <div className="card__author">Author: {podcastItem["im:artist"].label}</div>

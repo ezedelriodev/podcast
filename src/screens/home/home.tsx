@@ -11,10 +11,6 @@ const Home = () => {
   const [podcastList, setPodcastList] = useState<Entry[]>([]);
 
   useEffect(() => {
-    console.log({ filteredPodcastList });
-  }, [filteredPodcastList]);
-
-  useEffect(() => {
     if (podcastListQuery.data) {
       setFilteredPodcastList(podcastListQuery.data.feed.entry);
       setPodcastList(podcastListQuery.data.feed.entry);
