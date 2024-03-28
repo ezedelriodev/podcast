@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
-import { Entry } from "../../types/types";
+import { Entry } from "../../types/listTypes";
 import "./podcast-card.style.css";
+import { Link } from "react-router-dom";
 
 type Props = {
   podcastItem: Entry;
@@ -11,10 +12,12 @@ const PodcastCard: FC<Props> = (props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <div
+    <Link
+      to={`/podcast/${podcastItem.id.attributes["im:id"]}`}
       className={`card__container ${isHovered ? "hovered" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="card__rectangle">
         <div className="card__title">{podcastItem["im:name"].label}</div>
@@ -23,7 +26,7 @@ const PodcastCard: FC<Props> = (props) => {
       <div className="card__circle">
         <img src={podcastItem["im:image"][2].label} alt="Images" className="card__image" />
       </div>
-    </div>
+    </Link>
   );
 };
 

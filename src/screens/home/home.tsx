@@ -3,7 +3,7 @@ import Filter from "../../components/filter/filter";
 import PodcastCard from "../../components/podcast-card/podcast-card";
 import { usePodcastListConnect } from "../../hooks/connect/usePodcastListConnect";
 import "./home.style.css";
-import { Entry } from "../../types/types";
+import { Entry } from "../../types/listTypes";
 
 const Home = () => {
   const podcastListQuery = usePodcastListConnect();
