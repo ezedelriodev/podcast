@@ -1,4 +1,4 @@
-export interface PostCasts {
+export interface Podcast {
   feed: Feed;
 }
 

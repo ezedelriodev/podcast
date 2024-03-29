@@ -1,4 +1,4 @@
-export interface PostCasts {
+export interface DetailPodcast {
   resultCount: number;
   results: Result[];
 }
@@ -22,7 +22,7 @@ export interface Result {
   collectionPrice?: number;
   trackPrice?: number;
   collectionHdPrice?: number;
-  releaseDate: Date;
+  releaseDate: string;
   collectionExplicitness?: string;
   trackExplicitness?: string;
   trackCount?: number;

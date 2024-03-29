@@ -1,10 +1,10 @@
 import { FC, ChangeEvent, useState } from "react";
 import "./filter.style.css";
 
-type Props = {
+interface Props {
   handleFilterChange: (event: ChangeEvent<HTMLInputElement>) => void;
   listLength: number;
-};
+}
 
 const Filter: FC<Props> = (props) => {
   const { handleFilterChange, listLength } = props;

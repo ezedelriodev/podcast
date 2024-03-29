@@ -3,9 +3,9 @@ import { Entry } from "../../types/listTypes";
 import "./podcast-card.style.css";
 import { Link } from "react-router-dom";
 
-type Props = {
+interface Props {
   podcastItem: Entry;
-};
+}
 
 const PodcastCard: FC<Props> = (props) => {
   const { podcastItem } = props;
