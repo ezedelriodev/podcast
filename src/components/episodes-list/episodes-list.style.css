@@ -1,0 +1,90 @@
+.episodes-list__container {
+  display: flex;
+  margin-left: 90px;
+  margin-top: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+.episodes-list__counter {
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 100%;
+  letter-spacing: -0.5px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.episodes-list__counter h3 {
+  margin: 10px 0;
+}
+/* .episodes-list__table {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin-top: 20px;
+  max-height: calc(100vh - 250px);
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.episodes-list__header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid #dddddd;
+}
+
+.episode-column {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.episode-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dddddd;
+}
+
+.episode-row:nth-child(even) {
+  background-color: #f5f5f5;
+} */
+
+.episodes-list__table-container {
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.episodes-list__table {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border-collapse: collapse;
+}
+
+.episodes-list__table-header {
+  padding: 8px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid #dddddd;
+}
+
+.episodes-list__table-row--background {
+  background-color: #f7f7f7;
+}
+.episodes-list__table-row {
+  padding: 8px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.episodes-list__table-link {
+  text-decoration: none;
+  color: rgb(114, 85, 192);
+}
+
+.episodes-list__table-link:hover {
+  text-decoration: none;
+  color: rgb(16, 3, 53);
+}

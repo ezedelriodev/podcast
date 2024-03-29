@@ -45,3 +45,38 @@ export interface Result {
   episodeUrl?: string;
   episodeGuid?: string;
 }
+
+export interface Episode {
+  country?: string;
+  collectionViewUrl?: string;
+  trackTimeMillis?: number;
+  feedUrl?: string;
+  closedCaptioning?: string;
+  collectionId?: number;
+  collectionName?: string;
+  episodeUrl?: string;
+  artworkUrl60?: string;
+  artistViewUrl?: string;
+  contentAdvisoryRating?: string;
+  trackViewUrl?: string;
+  previewUrl?: string;
+  genres?: any[];
+  episodeGuid?: string;
+  releaseDate?: string;
+  description?: string;
+  artistIds?: number[];
+  shortDescription?: string;
+  trackId?: number;
+  trackName?: string;
+  artworkUrl160?: string;
+  episodeContentType?: string;
+  episodeFileExtension?: string;
+  artworkUrl600?: string;
+  kind?: string;
+  wrapperType?: string;
+}
+
+export interface Genre {
+  name: string;
+  id: string;
+}
