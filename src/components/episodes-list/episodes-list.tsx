@@ -22,9 +22,7 @@ const EpisodesList: FC<Props> = (props) => {
         <div className="episodes-list__table">
           <div className="episodes-list__table-header">Title</div>
           <div className="episodes-list__table-header">Date</div>
-          <div className="episodes-list__table-header align-end" style={{ textAlign: "end", paddingRight: "20" }}>
-            Duration
-          </div>
+          <div className="episodes-list__table-header align-end">Duration</div>
 
           {episodes.map((episode, index) => (
             <React.Fragment key={episode.trackId}>

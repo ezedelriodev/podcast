@@ -66,7 +66,7 @@ export interface Episode {
   description?: string;
   artistIds?: number[];
   shortDescription?: string;
-  trackId?: number;
+  trackId: number;
   trackName?: string;
   artworkUrl160?: string;
   episodeContentType?: string;
