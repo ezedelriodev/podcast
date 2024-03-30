@@ -5,7 +5,6 @@ import EpisodesList from "../../components/episodes-list/episodes-list";
 import Sidebar from "../../components/sidebar/sidebar";
 import detailMocks from "../../mocks/podcastDetail.json";
 import "./podcast-detail.style.css";
-import { useEffect } from "react";
 
 const details = detailMocks.results[0];
 const episodes = detailMocks.results.splice(1);
@@ -15,10 +14,6 @@ const PodcastDetail = () => {
 
   //TODO: Call to service
   //const podcastDetailQuery = usePodcastDetailConnect(podcastId);
-
-  useEffect(() => {
-    console.log("episodes in podcat", episodes);
-  }, [episodes]);
 
   return (
     <div className="podcast-detail__container" style={{ marginTop: 100 }}>

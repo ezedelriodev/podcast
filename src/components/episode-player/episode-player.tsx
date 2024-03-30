@@ -1,30 +1,26 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Episode } from "../../types/detailTypes";
-import detailMocks from "../../mocks/podcastDetail.json";
+import episodesMocks from "../../mocks/episodes.json";
+import "./episode-player.style.css";
 interface Props {
   episodes: Episode[];
   episodeId: string;
 }
 
-const details = detailMocks.results[0];
-const episodesSS = detailMocks.results.splice(1);
+//TODO: change this
+const episodesSS: Episode[] = episodesMocks.results;
 
 const EpisodePlayer: FC<Props> = (props) => {
   const { episodes, episodeId } = props;
 
   const episode = episodesSS.find((ep: Episode) => ep.trackId.toString() === episodeId);
 
-  useEffect(() => {
-    console.log("episodes in player", episodesSS);
-  }, [episodesSS]);
-
   return (
-    <div className="episode-page__content">
-      <h2 className="episode-page__title">{episode?.trackName}</h2>
-      <p className="episode-page__description" dangerouslySetInnerHTML={{ __html: episode?.description as string }}></p>
-      <audio className="episode-page__audio" controls>
-        <source src={episode?.episodeUrl} type="audio/mpeg" />
-        Your browser does not support the audio element.
+    <div className="episode-player__container">
+      <h2 className="episode-player__title">{episode?.trackName}</h2>
+      <p className="episode-player__description" dangerouslySetInnerHTML={{ __html: episode?.description as string }} />
+      <audio className="episode-player__audio" controls src={episode?.episodeUrl}>
+        Your browser does not support the <code>audio</code> element.
       </audio>
     </div>
   );
