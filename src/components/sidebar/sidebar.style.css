@@ -69,3 +69,7 @@
   text-align: left;
   color: #232323;
 }
+
+.link-no-cursor {
+  cursor: auto;
+}
