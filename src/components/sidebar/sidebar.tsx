@@ -15,7 +15,7 @@ interface Props {
 const Sidebar: FC<Props> = (props) => {
   const { id, image, title, artistName } = props;
   const podcastListQuery = usePodcastListConnect();
-  const podcastDetailQuery = usePodcastDetailConnect();
+  const { podcastDetailQuery } = usePodcastDetailConnect();
   const data = podcastListQuery.data;
   const { pathname } = useLocation();
 

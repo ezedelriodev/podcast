@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Episode } from "../../types/detailTypes";
 import "./episodes-list.style.css";
 import React from "react";
@@ -12,11 +12,16 @@ interface Props {
 
 const EpisodesList: FC<Props> = (props) => {
   const { episodes, podcastId } = props;
+  const [customEpisodes, setCustomEpisodes] = useState(episodes);
+
+  useEffect(() => {
+    setCustomEpisodes(episodes.splice(1));
+  }, [episodes]);
 
   return (
     <div className="episodes-list__container">
       <div className="episodes-list__counter">
-        <h3>Episodes: {episodes.length}</h3>
+        <h3>Episodes: {customEpisodes.length}</h3>
       </div>
       <div className="episodes-list__table-container">
         <div className="episodes-list__table">
@@ -24,7 +29,7 @@ const EpisodesList: FC<Props> = (props) => {
           <div className="episodes-list__table-header">Date</div>
           <div className="episodes-list__table-header align-end">Duration</div>
 
-          {episodes.map((episode, index) => (
+          {customEpisodes.map((episode, index) => (
             <React.Fragment key={episode.trackId}>
               <div
                 className={`episodes-list__table-row ${index % 2 === 0 ? "episodes-list__table-row--background" : ""}`}

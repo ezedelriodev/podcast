@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getApi } from "../../services/api/get-api";
-import { DetailPodcast } from "../../types/detailTypes";
+import { DetailPodcast, Episode, Result } from "../../types/detailTypes";
 import { useParams } from "react-router-dom";
 
 const getPodcastDetail = async (podcastId: string): Promise<DetailPodcast> => {
@@ -17,5 +17,8 @@ export const usePodcastDetailConnect = () => {
     queryFn: () => getPodcastDetail(podcastId),
   });
 
-  return podcastDetailQuery;
+  const details: Result = podcastDetailQuery.data ? podcastDetailQuery.data.results[0] : ({} as unknown as Result);
+  const episodes: Episode[] = podcastDetailQuery.data ? podcastDetailQuery.data.results : ([] as unknown as Episode[]);
+
+  return { podcastDetailQuery, details, episodes };
 };
