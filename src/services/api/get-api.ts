@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const URL_CORS = "https://cors-anywhere.herokuapp.com/";
+
 export const getApi = axios.create({
-  baseURL: "https://itunes.apple.com",
+  baseURL: `${URL_CORS}https://itunes.apple.com`,
 });
