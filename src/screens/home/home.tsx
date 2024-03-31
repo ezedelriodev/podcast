@@ -33,7 +33,10 @@ const Home = () => {
 
   return (
     <div className="home__container">
-      <Filter handleFilterChange={handleFilterChange} listLength={filteredPodcastList.length} />
+      {!!filteredPodcastList.length && (
+        <Filter handleFilterChange={handleFilterChange} listLength={filteredPodcastList.length} />
+      )}
+
       <div className="home__podcastList" data-testid="home_container">
         {filteredPodcastList?.map((item) => (
           <PodcastCard podcastItem={item} key={item.id.label} />
