@@ -3,8 +3,13 @@ import { getApi } from "../../services/api/get-api";
 import { Podcast } from "../../types/listTypes";
 
 const getPodcastList = async (): Promise<Podcast> => {
-  const { data } = await getApi.get<Podcast>("/us/rss/toppodcasts/limit=100/genre=1310/json");
-  return data;
+  try {
+    const { data } = await getApi.get<Podcast>("/us/rss/toppodcasts/limit=100/genre=1310/json");
+    return data;
+  } catch (error) {
+    console.error("Error searching for podcast listing:", error);
+    throw error;
+  }
 };
 
 export const usePodcastListConnect = () => {

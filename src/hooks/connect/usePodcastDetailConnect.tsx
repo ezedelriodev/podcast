@@ -4,10 +4,15 @@ import { DetailPodcast, Episode, Result } from "../../types/detailTypes";
 import { useParams } from "react-router-dom";
 
 const getPodcastDetail = async (podcastId: string): Promise<DetailPodcast> => {
-  const { data } = await getApi.get<DetailPodcast>(
-    `/lookup?id=${podcastId}&country=US&media=podcast&entity=podcastEpisode`,
-  );
-  return data;
+  try {
+    const { data } = await getApi.get<DetailPodcast>(
+      `/lookup?id=${podcastId}&country=US&media=podcast&entity=podcastEpisode`,
+    );
+    return data;
+  } catch (error) {
+    console.error("Error searching for episodes listing:", error);
+    throw error;
+  }
 };
 
 export const usePodcastDetailConnect = () => {
