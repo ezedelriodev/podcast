@@ -60,7 +60,10 @@ const Sidebar: FC<Props> = (props) => {
               <h4 className="sidebar__header-description">Description:</h4>
             </header>
             <section>
-              <p className="sidebar__description">{searchDescription()}</p>
+              <p
+                className="sidebar__description"
+                dangerouslySetInnerHTML={{ __html: searchDescription()?.replace(/\n/g, "<br />") as string }}
+              />
             </section>
           </div>
         </aside>

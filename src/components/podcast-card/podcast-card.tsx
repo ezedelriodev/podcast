@@ -24,7 +24,7 @@ const PodcastCard: FC<Props> = (props) => {
         <div className="card__author">Author: {podcastItem["im:artist"].label}</div>
       </div>
       <div className="card__circle">
-        <img src={podcastItem["im:image"][2].label} alt="Images" className="card__image" />
+        <img src={podcastItem["im:image"][2].label} alt={podcastItem["im:artist"].label} className="card__image" />
       </div>
     </Link>
   );

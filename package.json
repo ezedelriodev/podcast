@@ -13,6 +13,7 @@
     "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
     "axios": "^1.6.8",
+    "env-cmd": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -22,7 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -f ./environments/.env.development react-scripts start",
+    "prod": "env-cmd -f ./environments/.env.production react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

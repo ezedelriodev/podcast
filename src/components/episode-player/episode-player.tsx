@@ -14,7 +14,10 @@ const EpisodePlayer: FC<Props> = (props) => {
   return (
     <div className="episode-player__container">
       <h2 className="episode-player__title">{episode?.trackName}</h2>
-      <p className="episode-player__description" dangerouslySetInnerHTML={{ __html: episode?.description as string }} />
+      <p
+        className="episode-player__description"
+        dangerouslySetInnerHTML={{ __html: episode?.description?.replace(/\n/g, "<br />") as string }}
+      />
       <audio className="episode-player__audio" controls src={episode?.episodeUrl}>
         Your browser does not support the <code>audio</code> element.
       </audio>
