@@ -1,0 +1,54 @@
+.episode-page {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__content {
+    box-shadow: 0 4px 4px rgba(87, 87, 87, 0.1);
+    border: 1px solid rgba(87, 87, 87, 0.1);
+    width: calc(100% - 20px);
+    padding: 20px;
+  }
+  &__title,
+  &__description {
+    margin-bottom: 10px;
+  }
+  &__audio {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .episode-page {
+    grid-template-columns: 100%;
+  }
+}
+
+.episode-player__container {
+  padding: 30px 20px;
+  margin-top: 20px;
+  margin-left: 90px;
+  width: 100%;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.episode-player__title {
+  margin-top: 0;
+  letter-spacing: -0.5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.episode-player__description {
+  font-style: italic;
+}
+
+.episode-player__audio {
+  margin-top: 30px;
+  width: 100%;
+}
