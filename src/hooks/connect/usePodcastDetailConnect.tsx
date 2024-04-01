@@ -17,7 +17,6 @@ export const usePodcastDetailConnect = () => {
     queryKey: ["podcastDetail", podcastId],
     queryFn: () => getPodcastDetail(podcastId),
     staleTime: 1000 * 60 * 60 * 24,
-    enabled: !!podcastId,
   });
 
   const details: Result = podcastDetailQuery.data ? podcastDetailQuery.data.results[0] : ({} as unknown as Result);

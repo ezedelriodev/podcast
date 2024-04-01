@@ -4,6 +4,7 @@ import PodcastCard from "../../components/podcast-card/podcast-card";
 import { usePodcastListConnect } from "../../hooks/connect/usePodcastListConnect";
 import "./home.style.css";
 import { Entry } from "../../types/listTypes";
+import LoadingIcon from "../../components/loading-icon/loading-icon";
 
 const Home = () => {
   const podcastListQuery = usePodcastListConnect();
@@ -33,6 +34,7 @@ const Home = () => {
 
   return (
     <>
+      {podcastListQuery.isFetching && <LoadingIcon />}
       {!!filteredPodcastList.length && (
         <div className="home__container">
           <Filter handleFilterChange={handleFilterChange} listLength={filteredPodcastList.length} />
