@@ -13,8 +13,9 @@ const getPodcastDetail = async (podcastId: string): Promise<DetailPodcast> => {
 export const usePodcastDetailConnect = () => {
   const { podcastId = "" } = useParams<{ podcastId: string }>();
   const podcastDetailQuery = useQuery({
-    queryKey: ["podcastDetail"],
+    queryKey: ["podcastDetail", podcastId],
     queryFn: () => getPodcastDetail(podcastId),
+    staleTime: 1000 * 60 * 60 * 24,
   });
 
   const details: Result = podcastDetailQuery.data ? podcastDetailQuery.data.results[0] : ({} as unknown as Result);

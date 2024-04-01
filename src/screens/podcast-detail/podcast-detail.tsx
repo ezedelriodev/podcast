@@ -10,14 +10,14 @@ const PodcastDetail = () => {
   const { details, episodes } = usePodcastDetailConnect();
 
   return (
-    <div className="podcast-detail__container" style={{ marginTop: 100 }}>
+    <div className="podcast-detail__container">
       <DetailLayout
         sidebar={
           <Sidebar
-            id={details?.trackId}
-            image={details?.artworkUrl600}
-            title={details?.trackName}
-            artistName={details?.artistName || ""}
+            id={details.trackId}
+            image={details.artworkUrl600}
+            title={details.trackName}
+            artistName={details.artistName || ""}
           />
         }
         body={<EpisodesList episodes={episodes} podcastId={podcastId} />}

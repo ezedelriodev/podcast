@@ -15,7 +15,8 @@ const EpisodesList: FC<Props> = (props) => {
   const [customEpisodes, setCustomEpisodes] = useState(episodes);
 
   useEffect(() => {
-    setCustomEpisodes(episodes.splice(1));
+    const copyEpisodes = [...episodes];
+    setCustomEpisodes(copyEpisodes.splice(1));
   }, [episodes]);
 
   return (

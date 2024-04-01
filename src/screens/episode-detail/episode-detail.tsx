@@ -1,21 +1,16 @@
 import { useParams } from "react-router-dom";
-
 import DetailLayout from "../../components/detail-layout/detail-layout";
 import Sidebar from "../../components/sidebar/sidebar";
-import detailMocks from "../../mocks/podcastDetail.json";
 import EpisodePlayer from "../../components/episode-player/episode-player";
-
-const details = detailMocks.results[0];
-const episodes = detailMocks.results.splice(1);
+import { usePodcastDetailConnect } from "../../hooks/connect/usePodcastDetailConnect";
+import "./episode-detail.style.css";
 
 const EpisodeDetail = () => {
   const { episodeId = "" } = useParams<{ podcastId: string; episodeId: string }>();
-
-  //TODO: Call to service
-  //const podcastDetailQuery = usePodcastDetailConnect(podcastId);
+  const { details, episodes } = usePodcastDetailConnect();
 
   return (
-    <div className="podcast-detail__container" style={{ marginTop: 100 }}>
+    <div className="episode-detail__container">
       <DetailLayout
         sidebar={
           <Sidebar
