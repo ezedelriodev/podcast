@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "env-cmd -f ./environments/.env.development react-scripts start",
-    "prod": "env-cmd -f ./environments/.env.production react-scripts start",
+    "prod": "env-cmd -f ./environments/.env.production react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "axios-mock-adapter": "^1.22.0"
   }
 }
