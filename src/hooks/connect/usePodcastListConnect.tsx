@@ -1,14 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import { getApi } from "../../services/api/get-api";
 import { Podcast } from "../../types/listTypes";
+import { getPodcastListStorage, savePodcastListStorage } from "../../services/local-storage/local-storage";
 
 const getPodcastList = async (): Promise<Podcast> => {
-  try {
-    const { data } = await getApi.get<Podcast>("/us/rss/toppodcasts/limit=100/genre=1310/json");
-    return data;
-  } catch (error) {
-    console.error("Error searching for podcast listing:", error);
-    throw error;
+  const podcastListStorage = getPodcastListStorage();
+  if (podcastListStorage) {
+    return podcastListStorage;
+  } else {
+    try {
+      const { data } = await getApi.get<Podcast>("/us/rss/toppodcasts/limit=100/genre=1310/json");
+      savePodcastListStorage(data);
+      return data;
+    } catch (error) {
+      console.error("Error searching for podcast listing:", error);
+      throw error;
+    }
   }
 };
 
