@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.card__container.hovered {
+.card__container:hover {
   box-shadow: -20px 20px 16px rgba(0, 0, 0, 0.3);
   transform: translate(7px, -7px);
 }

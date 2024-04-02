@@ -9,14 +9,11 @@ interface Props {
 
 const PodcastCard: FC<Props> = (props) => {
   const { podcastItem } = props;
-  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
     <Link
       to={`/podcast/${podcastItem.id.attributes["im:id"]}`}
-      className={`card__container ${isHovered ? "hovered" : ""}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="card__container"
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="card__rectangle">
