@@ -5,6 +5,7 @@ import { getPodcastListStorage, savePodcastListStorage } from "../../services/lo
 
 const getPodcastList = async (): Promise<Podcast> => {
   const podcastListStorage = getPodcastListStorage();
+
   if (podcastListStorage) {
     return podcastListStorage;
   } else {

@@ -1,6 +1,6 @@
 //import { Episode, PodcastDetails } from "../types";
 
-import { DetailPodcast } from "../../types/detailTypes";
+import { Episode, Result } from "../../types/detailTypes";
 import { Podcast } from "../../types/listTypes";
 
 const LIST_KEY = "podcastList";
@@ -25,12 +25,16 @@ export const getPodcastListStorage = () => {
   return null;
 };
 
-export const savePodcastDetailStorage = (podcastId: string, data: DetailPodcast) => {
+export const savePodcastDetailStorage = (podcastId: string, details: Result, episodes: Episode[]) => {
   const storedDataJson = localStorage.getItem(DETAIL_KEY);
   let storedData = storedDataJson ? JSON.parse(storedDataJson) : {};
 
   const currentTime = new Date().getTime();
-  const dataToStore = { data, timestamp: currentTime };
+  const dataToStore = {
+    podcastDetails: details,
+    episodes: episodes,
+    timestamp: currentTime,
+  };
 
   storedData[podcastId] = dataToStore;
 

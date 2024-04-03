@@ -38,10 +38,6 @@
 .episode-player__title {
   margin-top: 0;
   letter-spacing: -0.5px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 }
 
 .episode-player__description {
