@@ -17,7 +17,7 @@ export const getPodcastListStorage = () => {
   if (storedData) {
     const { data, timestamp } = JSON.parse(storedData);
     const currentTime = new Date().getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
+    const oneDay = 1000 * 60 * 60 * 24;
     if (currentTime - timestamp < oneDay) {
       return data;
     }
@@ -55,7 +55,7 @@ export const getPodcastDetailStorage = (podcastId: string) => {
     const { timestamp } = podcastDetail;
 
     const currentTime = new Date().getTime();
-    const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
+    const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
 
     if (currentTime - timestamp < oneDayInMilliseconds) {
       return podcastDetail;
