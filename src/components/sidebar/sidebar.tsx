@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { usePodcastListConnect } from "../../hooks/connect/usePodcastListConnect";
 import "./sidebar.style.css";
 import { useLocation } from "react-router-dom";
-import { usePodcastDetailConnect } from "../../hooks/connect/usePodcastDetailConnect";
 
 interface Props {
   id: number;
@@ -15,7 +14,6 @@ interface Props {
 const Sidebar: FC<Props> = (props) => {
   const { id, image, title, artistName } = props;
   const podcastListQuery = usePodcastListConnect();
-  const { podcastDetailQuery } = usePodcastDetailConnect();
   const data = podcastListQuery.data;
   const { pathname } = useLocation();
 
@@ -30,7 +28,7 @@ const Sidebar: FC<Props> = (props) => {
 
   return (
     <>
-      {!podcastDetailQuery.isFetching && (
+      {!podcastListQuery.isFetching && (
         <aside className="sidebar__container">
           <Link to={`/podcast/${id}`} className={`sidebar__image ${isEpisodeScreen ? "" : "link-no-cursor"}`}>
             <img className="podcast-detail__artwork" src={image} alt={title} />

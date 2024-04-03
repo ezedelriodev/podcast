@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <>
       {podcastListQuery.isFetching && <LoadingIcon />}
-      {!!filteredPodcastList.length && (
+      {podcastListQuery.isFetched && (
         <div className="home__container">
           <Filter handleFilterChange={handleFilterChange} listLength={filteredPodcastList.length} />
           <div className="home__podcastList" data-testid="home_container">
